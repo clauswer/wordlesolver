@@ -1,33 +1,26 @@
 import re
 import random
 
-def loader(file):
+class candidates():
     """
-    file : string
-    Path to the textfile with the words.
+    path : string
+    Path to the textfile with the possible wordle-words.
 
     File has to contain one word per line.
-    """
-    with open(file) as file:
-        words = file.readlines()
-        words = [word.rstrip("\n") for word in words]
+    
+    The class generates a list with all the possible words.
 
-    return words
-
-class candidates(list):
-    """
-    list : list of strings
-    A list with all the possible words.
-
-    Class with the list of all the possible words.
     Depending on the methods, the list gets filtered more and more with every method, used on one certain candidates-object.
 
     To show the list of possible word-candidates in this object call the objects list:
     wordlesolver.candidates.list
     """
 
-    def __init__(self, list):
-        self.list = list
+    def __init__(self, path):
+        with open(path) as file:
+            words = file.readlines()
+            words = [word.rstrip("\n") for word in words]
+        self.list = words
         
     def candidate(self):
         """
