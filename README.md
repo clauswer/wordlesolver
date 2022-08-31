@@ -15,6 +15,8 @@ The method-names are "inspired" by the [heise nerdle](https://nerdle.pinae.net/)
 # Future improvements
 
 - load word-list from webdictionaries
+- show best candidate, based on the most hints the useage of this word would give
+  - maybe based on levenshtein-distances between the candidates?
 - insert next candidate into used wordle-page
 - load results from used wordle-page
   - and thus have a fully automated solving process ;o) 
