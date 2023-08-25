@@ -16,7 +16,7 @@ class candidates():
     wordlesolver.candidates.list
     """
 
-    def __init__(self, path):
+    def __init__(self, path="5-letter-words.txt"):
         with open(path) as file:
             words = file.readlines()
             words = [word.rstrip("\n") for word in words]
