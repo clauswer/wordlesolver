@@ -89,7 +89,7 @@ class candidates():
 
         arg : string
           specify contained character and his position together in a string like this: 
-          "A2" = word contains letter A, but not on position 2.
+          "A2" = word contains letter A on position 2.
           For more characters or one character on several position just list all hints as follows:
           wordlesolver.candidates.somewhere("A2", "A5", "G3")
 
