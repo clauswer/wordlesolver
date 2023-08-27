@@ -41,12 +41,12 @@ class candidates():
         inplace : bool, default False
           If True, change in-place.
 
-        Treates lowercase as uppercase.
+        Treates uppercase as lowercase.
 
         Returns:
           candidates-object or None
         """      
-        filtered_list = [word for word in self.list if re.search(f"[{string.upper()}]", word) == None]
+        filtered_list = [word for word in self.list if re.search(f"[{string.lower()}]", word) == None]
         self.list = filtered_list
         if candidate:
             self.candidate()
@@ -69,14 +69,14 @@ class candidates():
         inplace : bool, default False
           If True, change in-place.
 
-        Treates lowercase as uppercase.
+        Treates uppercase as lowercase.
 
         Returns:
           candidates-object or None
         """
         for arg in args:
-            filtered_list = [word for word in self.list if arg[0].upper() in word]
-            filtered_list = [word for word in filtered_list if word[int(arg[1])-1] != arg[0].upper()]
+            filtered_list = [word for word in self.list if arg[0].lower() in word]
+            filtered_list = [word for word in filtered_list if word[int(arg[1])-1] != arg[0].lower()]
             self.list = filtered_list
         if candidate:
             self.candidate()
@@ -99,13 +99,13 @@ class candidates():
         inplace : bool, default False
           If True, change in-place.
 
-        Treates lowercase as uppercase.
+        Treates uppercase as lowercase.
 
         Returns:
           candidates-object or None
         """
         for arg in args:
-            filtered_list = [word for word in self.list if word[int(arg[1])-1] == arg[0].upper()]
+            filtered_list = [word for word in self.list if word[int(arg[1])-1] == arg[0].lower()]
             self.list = filtered_list
         if candidate:
             self.candidate()
